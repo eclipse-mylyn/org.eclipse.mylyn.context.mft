@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-Vendor: %Bundle-Vendor
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.eclipse.mylyn.mft.emf.core;singleton:=true
+Bundle-Version: 0.9.0.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.mylyn.context.core,
+ org.eclipse.emf.common,
+ org.eclipse.emf.ecore,
+ org.eclipse.core.resources
+Export-Package: org.eclipse.mylyn.mft.emf.core;x-internal:=true,
+ org.eclipse.mylyn.mft.emf.core.ecore;x-internal:=true
+Bundle-ActivationPolicy: lazy

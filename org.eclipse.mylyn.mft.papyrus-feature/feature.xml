@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2011 Tasktop Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+         Tasktop Technologies - initial API and implementation
+ -->
+<feature
+      id="org.eclipse.mylyn.mft.papyrus"
+      label="%featureName"
+      version="0.9.0.qualifier"
+      provider-name="%providerName"
+      plugin="org.eclipse.mylyn">
+
+   <description url="http://eclipse.org/mylyn">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="license.html">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.mylyn.commons" version="3.5.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.mylyn.context_feature" version="3.5.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.mylyn.mft.emf" version="0.9.0"/>
+      <import feature="org.eclipse.mylyn.mft.gmf" version="0.9.0"/>
+      <import feature="org.eclipse.papyrus" version="0.8.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.papyrus.diagram.clazz" version="0.8.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.papyrus.uml" version="0.8.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.uml2" version="3.2.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.mylyn.mft.papyrus.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

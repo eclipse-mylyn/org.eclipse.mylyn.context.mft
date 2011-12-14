@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?><!--
+    Copyright (c) 2011 Tasktop Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+         Tasktop Technologies - initial API and implementation
+ -->
+
+<plugin> 
+
+      
+     <extension point="org.eclipse.ui.popupMenus"> 
+     
+     <objectContribution
+     	   adaptable="true"
+           id="org.eclipse.mylyn.modeling.emf.ui.interest.landmark.eobject.element"
+           objectClass="org.eclipse.emf.ecore.EObject">
+	    <action
+           class="org.eclipse.mylyn.internal.context.ui.actions.InterestIncrementAction"
+           definitionId="org.eclipse.mylyn.context.modeling.ui.commands.interest.increment"
+           enablesFor="*"
+           icon="icons/elcl16/interest-increase.gif"
+           id="org.eclipse.mylyn.emf.ui.interest.landmark.element"
+           label="%InterestIncrementAction.label"
+           menubarPath="group.reorganize"
+           overrideActionId="org.eclipse.mylyn.resources.ui.ui.interest.increase.element"
+           tooltip="%InterestIncrementAction.tooltip">
+     </action>
+     <visibility>
+     	<and>
+	     	<systemProperty
+	               name="org.eclipse.mylyn.context.core.context.active"
+    	           value="true">
+    	    </systemProperty>
+           <objectClass
+                 name="org.eclipse.emf.ecore.EObject">
+           </objectClass>
+        </and>
+     </visibility>
+	 </objectContribution>
+
+     <objectContribution
+     	   adaptable="true"
+           id="org.eclipse.mylyn.modeling.gmf.ui.interest.landmark.diagram.element"
+           objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart">
+	    <action
+           class="org.eclipse.mylyn.internal.context.ui.actions.InterestIncrementAction"
+           definitionId="org.eclipse.mylyn.context.modeling.ui.commands.interest.increment"
+           enablesFor="*"
+           icon="icons/elcl16/interest-increase.gif"
+           id="org.eclipse.mylyn.gmf.ui.interest.landmark.element"
+           label="%InterestIncrementAction.label"
+           menubarPath="group.reorganize"
+           overrideActionId="org.eclipse.mylyn.resources.ui.ui.interest.increase.element"
+           tooltip="%InterestIncrementAction.tooltip">
+     </action>
+     <visibility>
+     	<and>
+	     	<systemProperty
+	               name="org.eclipse.mylyn.context.core.context.active"
+    	           value="true">
+    	    </systemProperty>
+           <objectClass
+                 name="org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart">
+           </objectClass>
+        </and>
+     </visibility>
+	 </objectContribution>
+	 
+     <objectContribution
+           adaptable="true"
+           id="org.eclipse.mylyn.modeling.emf.ui.interest.remove.eobject.element"
+           objectClass="org.eclipse.emf.ecore.EObject">
+     	<action
+            class="org.eclipse.mylyn.internal.mft.gmf.ui.RemoveModelFromContextAction"
+            definitionId="org.eclipse.mylyn.context.modeling.ui.commands.interest.decrement"
+            enablesFor="*"
+            icon="icons/elcl16/interest-decrease.gif"
+            id="org.eclipse.mylyn.emf.ui.interest.remove.element"
+            label="%InterestDecrementAction.label"
+            menubarPath="group.reorganize"
+            overrideActionId="org.eclipse.mylyn.resources.ui.ui.interest.remove.element"
+            tooltip="%InterestDecrementAction.tooltip">
+      </action>
+            <visibility>
+      		<and>
+      			<systemProperty
+	               name="org.eclipse.mylyn.context.core.context.active"
+    	           value="true">
+      			</systemProperty>
+	               <objectClass
+	                     name="org.eclipse.emf.ecore.EObject">
+	               </objectClass>
+      		</and>
+      </visibility>
+     </objectContribution>
+     
+     <objectContribution
+           adaptable="true"
+           id="org.eclipse.mylyn.modeling.gmf.ui.interest.remove.diagram.element"
+           objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart">
+     	<action
+            class="org.eclipse.mylyn.internal.mft.gmf.ui.RemoveModelFromContextAction"
+            definitionId="org.eclipse.mylyn.context.modeling.ui.commands.interest.decrement"
+            enablesFor="*"
+            icon="icons/elcl16/interest-decrease.gif"
+            id="org.eclipse.mylyn.gmf.ui.interest.remove.element"
+            label="%InterestDecrementAction.label"
+            menubarPath="group.reorganize"
+            overrideActionId="org.eclipse.mylyn.resources.ui.ui.interest.remove.element"
+            tooltip="%InterestDecrementAction.tooltip">
+      </action>
+            <visibility>
+      		<and>
+      			<systemProperty
+	               name="org.eclipse.mylyn.context.core.context.active"
+    	           value="true">
+      			</systemProperty>
+	               <objectClass
+	                     name="org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart">
+	               </objectClass>
+      		</and>
+      </visibility>
+     </objectContribution>
+	</extension>
+	
+	<!-- HAVEN"T BEEN ABLE TO DISCOVER A GOOD SET OF KEY-COMBOS FOR THIS
+   <extension point="org.eclipse.ui.bindings">     
+      <key
+            sequence="M1+M2+M3+ARROW_UP"
+            commandId="org.eclipse.mylyn.context.modeling.ui.commands.interest.increment"
+            schemeId ="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            sequence="M1+M2+M3+ARROW_DOWN"
+            commandId="org.eclipse.mylyn.context.modeling.ui.commands.interest.decrement"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   -->
+      <extension point="org.eclipse.ui.commands">
+      <command
+            name="%commands.interest.increment.name"
+            description="%commands.interest.increment.description"
+            id="org.eclipse.mylyn.context.modeling.ui.commands.interest.increment"
+            defaultHandler="org.eclipse.mylyn.internal.context.ui.actions.MarkAsLandmarkCommandHandler"
+            categoryId="org.eclipse.mylyn.context.ui.commands">
+      </command>
+      <command
+            name="%commands.interest.decrement.name"
+            description="%commands.interest.decrement.description"
+            id="org.eclipse.mylyn.context.modeling.ui.commands.interest.decrement"
+            defaultHandler="org.eclipse.mylyn.internal.mft.gmf.ui.RemoveModelFromContextCommandHandler"
+            categoryId="org.eclipse.mylyn.context.ui.commands">
+            
+      </command>
+   </extension>
+</plugin>
