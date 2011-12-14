@@ -14,7 +14,7 @@
   <name>Model Focusing Tools for Mylyn 3.7</name>
   <properties>
     <qualifier>${project.unqualifiedVersion}</qualifier>
-    <sign-dir>tools/mylyn/hudson/signing/incubator</sign-dir>
+    <sign-dir>tools/mylyn/hudson/mft/signing</sign-dir>
   </properties>
   <profiles>
     <profile>
@@ -26,8 +26,8 @@
 		</property>
       </activation>
       <properties>
-		<dist.site>/home/data/httpd/download.eclipse.org/mylyn-context-modeling</dist.site>
-		<dist.archive>${dist.site}/drops</dist.archive>
+		<dist.site>/home/data/httpd/download.eclipse.org/mft/snapshots</dist.site>
+		<dist.archive>/home/data/httpd/download.eclipse.org/mft/drops</dist.archive>
       </properties>
     </profile>
   </profiles>

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Mylyn Context Modeling EMF Bridge Tests
+Bundle-Name: Mylyn Context EMF Connector
 Bundle-SymbolicName: org.eclipse.mylyn.mft.emf.tests;singleton:=true
 Bundle-Version: 0.9.0.qualifier
 Bundle-Vendor: Eclipse Mylyn

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Mylyn Conext Modeling EMF Bridge SDK
+Bundle-Name: Mylyn Context Model Focusing Tools SDK
 Bundle-SymbolicName: org.eclipse.mylyn.mft.sdk.util;singleton:=true
 Bundle-Version: 0.9.0.qualifier
 Bundle-Vendor: Eclipse Mylyn

@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.mylyn.commons.sdk.util.CommonTestUtil;
 import org.eclipse.mylyn.commons.sdk.util.ResourceTestUtil;
 import org.eclipse.mylyn.context.core.ContextCore;
 import org.eclipse.mylyn.context.core.IInteractionElement;
@@ -53,8 +54,9 @@ public class PapyrusDiagramEditorTest extends AbstractEmfContextTest {
 		super.setUp();
 		structureBridge = new Uml2StructureBridge();
 		monitor = new DiagramUiEditingMonitor(structureBridge, Uml2UiBridge.getInstance());
-		papyrusProject = WorkspaceSetupHelper.createJavaPluginProjectFromZip(this,
-				"org.eclipse.mylyn.modeling.tests.papyrus", "papyrus.zip");
+		String projectName = "org.eclipse.mylyn.modeling.tests.papyrus"; //$NON-NLS-1$
+		papyrusProject = WorkspaceSetupHelper.createJavaPluginProjectFromDirectory(
+				CommonTestUtil.getFile(this, "testdata/" + projectName), projectName); //$NON-NLS-1$
 		papyrusProject.open(new NullProgressMonitor());
 	}
 
@@ -62,7 +64,7 @@ public class PapyrusDiagramEditorTest extends AbstractEmfContextTest {
 
 		papyrusProject.open(new NullProgressMonitor());
 		IProject project = papyrusProject.getProject();
-		IFile file = project.getFile("model/model.di");
+		IFile file = project.getFile("model/model.di"); //$NON-NLS-1$
 		assertNotNull(file);
 
 		assertTrue(file.exists());

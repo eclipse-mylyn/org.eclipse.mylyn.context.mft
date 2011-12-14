@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Mylyn Context Modeling Ecore Tools Bridge Tests
+Bundle-Name: Mylyn Context Ecore Tools Connector
 Bundle-SymbolicName: org.eclipse.mylyn.mft.ecoretools.tests;singleton:=true
 Bundle-Version: 0.9.0.qualifier
 Bundle-Vendor: Eclipse Mylyn

@@ -13,6 +13,7 @@ package org.eclipse.mylyn.mft.sdk.util;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.mylyn.commons.sdk.util.CommonTestUtil;
 import org.eclipse.mylyn.commons.sdk.util.ResourceTestUtil;
 import org.eclipse.mylyn.context.sdk.java.WorkspaceSetupHelper;
 
@@ -27,8 +28,9 @@ public class AbstractEmfContextTest extends AbstractModelingContextTest {
 	protected void setUp() throws Exception {
 		super.setUp();
 		// ecore diagram project is used for this test, even for non-diagram cases.
-		emfProject = WorkspaceSetupHelper.createJavaPluginProjectFromZip(AbstractEmfContextTest.class,
-				"org.eclipse.mylyn.modeling.tests.ecorediagram", "ecorediagram.zip"); //$NON-NLS-1$//$NON-NLS-2$
+		String projectName = "org.eclipse.mylyn.modeling.tests.ecorediagram"; //$NON-NLS-1$
+		emfProject = WorkspaceSetupHelper.createJavaPluginProjectFromDirectory(
+				CommonTestUtil.getFile(AbstractEmfContextTest.class, "testdata/" + projectName), projectName); //$NON-NLS-1$
 		emfProject.open(new NullProgressMonitor());
 		assertTrue(emfProject.isOpen());
 	}
