@@ -32,10 +32,10 @@
       <import feature="org.eclipse.gmf" version="1.5.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.emf.ecoretools" version="1.0.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.gmf.runtime.notation" version="1.5.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.mylyn.context_feature" version="3.5.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.mylyn.commons" version="3.5.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.mylyn.mft.emf" version="0.9.0.qualifier"/>
-      <import feature="org.eclipse.mylyn.mft.gmf" version="0.9.0.qualifier"/>
+      <import feature="org.eclipse.mylyn.commons" version="3.7.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.mylyn.context_feature" version="3.7.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.mylyn.mft.emf" version="0.9.0" match="compatible"/>
+      <import feature="org.eclipse.mylyn.mft.gmf" version="0.9.0" match="compatible"/>
    </requires>
 
    <plugin
