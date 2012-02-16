@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.mylyn.context.core.AbstractContextStructureBridge;
@@ -97,7 +98,7 @@ public abstract class EmfStructureBridge extends DomainModelContextStructureBrid
 			Object objectForHandle = parentBridge.getObjectForHandle(handle);
 			if (objectForHandle instanceof IFile) {
 				IFile file = (IFile) objectForHandle;
-				ResourceSetImpl rs = new ResourceSetImpl();
+				ResourceSet rs = getDomainObjectResourceSet();
 				URI createFileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 				Resource createResource = rs.getResource(createFileURI, true);
 				return createResource;
@@ -112,26 +113,37 @@ public abstract class EmfStructureBridge extends DomainModelContextStructureBrid
 	 * mapped object. This allows us to make generic references to objects that might not have equivalent mappings in
 	 * memory, e.g. an EMF object that is loaded from a new resource set. EMF-based implementations typically shouldn't
 	 * need to override this.
+	 * 
+	 * @see #getDomainObjectResourceSet()
 	 */
 	@Override
 	public Object getDomainObjectForHandle(String handle) {
 		URI uri = URI.createURI(handle);
-		ResourceSetImpl resourceSetImpl = new ResourceSetImpl();
+		ResourceSet resourceSet = getDomainObjectResourceSet();
 		String fragment = uri.fragment();
 		if (fragment.equals("/")) { //$NON-NLS-1$
-			Resource resource = resourceSetImpl.getResource(uri, true);
+			Resource resource = resourceSet.getResource(uri, true);
 			return resource;
 		}
 		try {
-			EObject eObject = resourceSetImpl.getEObject(uri, true);
+			EObject eObject = resourceSet.getEObject(uri, true);
 			if (eObject != null) {
 				return eObject;
 			}
-			return resourceSetImpl.getResource(uri, true);
+			return resourceSet.getResource(uri, true);
 		} catch (WrappedException e) {
 			// this is a reasonable thing to happen in the case where the resource is no longer available.
 		}
 		return null;
+	}
+
+	/**
+	 * Returns a ResourceSet that can be used to obtain domain objects from domain handles. The default implementation
+	 * returns a new {@link ResourceSetImpl} on each call. EMF-based implementations needing specific ResourceSet
+	 * implementations or instances can override this.
+	 */
+	protected ResourceSet getDomainObjectResourceSet() {
+		return new ResourceSetImpl();
 	}
 
 	/**
