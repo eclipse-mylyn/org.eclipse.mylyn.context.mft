@@ -71,6 +71,8 @@
 	<module>org.eclipse.mylyn.mft.papyrus.tests</module>
 	<module>org.eclipse.mylyn.mft.sdk-feature</module>
 	<module>org.eclipse.mylyn.mft.sdk.util</module>
-    <module>org.eclipse.mylyn.mft-site</module>
+	<module>org.eclipse.mylyn.mft.uml2-feature</module>
+	<module>org.eclipse.mylyn.mft.uml2.core</module>
+   <module>org.eclipse.mylyn.mft-site</module>
   </modules>
 </project>

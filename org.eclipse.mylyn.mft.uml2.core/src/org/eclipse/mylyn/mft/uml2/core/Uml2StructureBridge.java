@@ -9,10 +9,10 @@
  *     Tasktop Technologies - initial API and implementation
  *******************************************************************************/
 
-package org.eclipse.mylyn.internal.mft.papyrus.ui;
+package org.eclipse.mylyn.mft.uml2.core;
 
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.mylyn.mft.gmf.ui.GmfStructureBridge;
+import org.eclipse.mylyn.mft.emf.core.EmfStructureBridge;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Relationship;
@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @author Miles Parker
  */
-public class Uml2StructureBridge extends GmfStructureBridge {
+public class Uml2StructureBridge extends EmfStructureBridge {
 
 	public static final String UML2_CONTENT_TYPE = "uml2"; //$NON-NLS-1$
 

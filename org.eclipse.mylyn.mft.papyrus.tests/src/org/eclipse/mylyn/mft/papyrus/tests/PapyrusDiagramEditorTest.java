@@ -24,7 +24,7 @@ import org.eclipse.mylyn.commons.sdk.util.ResourceTestUtil;
 import org.eclipse.mylyn.context.core.ContextCore;
 import org.eclipse.mylyn.context.core.IInteractionElement;
 import org.eclipse.mylyn.context.sdk.java.WorkspaceSetupHelper;
-import org.eclipse.mylyn.internal.mft.papyrus.ui.Uml2StructureBridge;
+import org.eclipse.mylyn.internal.mft.papyrus.ui.Uml2GmfStructureBridge;
 import org.eclipse.mylyn.internal.mft.papyrus.ui.Uml2UiBridge;
 import org.eclipse.mylyn.mft.emf.core.DomainModelContextStructureBridge;
 import org.eclipse.mylyn.mft.emf.ui.DiagramUiEditingMonitor;
@@ -52,7 +52,7 @@ public class PapyrusDiagramEditorTest extends AbstractEmfContextTest {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
-		structureBridge = new Uml2StructureBridge();
+		structureBridge = new Uml2GmfStructureBridge();
 		monitor = new DiagramUiEditingMonitor(structureBridge, Uml2UiBridge.getInstance());
 		String projectName = "org.eclipse.mylyn.modeling.tests.papyrus"; //$NON-NLS-1$
 		papyrusProject = WorkspaceSetupHelper.createJavaPluginProjectFromDirectory(
