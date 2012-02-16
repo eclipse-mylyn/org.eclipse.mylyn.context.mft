@@ -120,17 +120,15 @@ public abstract class EmfStructureBridge extends DomainModelContextStructureBrid
 	public Object getDomainObjectForHandle(String handle) {
 		URI uri = URI.createURI(handle);
 		ResourceSet resourceSet = getDomainObjectResourceSet();
-		String fragment = uri.fragment();
-		if (fragment.equals("/")) { //$NON-NLS-1$
-			Resource resource = resourceSet.getResource(uri, true);
-			return resource;
-		}
 		try {
+			if (!uri.hasFragment()) {
+				Resource resource = resourceSet.getResource(uri, true);
+				return resource;
+			}
 			EObject eObject = resourceSet.getEObject(uri, true);
 			if (eObject != null) {
 				return eObject;
 			}
-			return resourceSet.getResource(uri, true);
 		} catch (WrappedException e) {
 			// this is a reasonable thing to happen in the case where the resource is no longer available.
 		}
@@ -177,9 +175,16 @@ public abstract class EmfStructureBridge extends DomainModelContextStructureBrid
 				return getHandleIdentifier(eObject.eContainer());
 			} else {
 				//must be base package
-				return getHandleIdentifier(eObject.eResource());
+				Resource resource = eObject.eResource();
+				IFile file = getFile(resource);
+				if (file != null && file.exists()) {
+					AbstractContextStructureBridge parentBridge = ContextCore.getStructureBridge(parentContentType);
+					return parentBridge.getHandleIdentifier(file);
+				}
+				return getHandleIdentifier(resource);
 			}
-		} else if (object instanceof Resource) {
+		}
+		if (object instanceof Resource) {
 			Resource resource = (Resource) object;
 			IFile file = getFile(resource);
 			if (file != null && file.exists()) {
