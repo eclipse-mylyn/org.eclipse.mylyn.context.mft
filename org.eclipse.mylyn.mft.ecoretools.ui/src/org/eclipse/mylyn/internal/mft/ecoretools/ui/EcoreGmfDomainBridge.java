@@ -11,6 +11,7 @@
 
 package org.eclipse.mylyn.internal.mft.ecoretools.ui;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.mylyn.mft.emf.core.ecore.EcoreDomainBridge;
 
@@ -22,7 +23,8 @@ public class EcoreGmfDomainBridge extends EcoreDomainBridge {
 	@Override
 	public Object getDomainObject(Object object) {
 		if (object instanceof View) {
-			return ((View) object).getElement();
+			EObject semanticElement = ((View) object).getElement();
+			return semanticElement == null ? null : super.getDomainObject(semanticElement);
 		}
 		return super.getDomainObject(object);
 	}

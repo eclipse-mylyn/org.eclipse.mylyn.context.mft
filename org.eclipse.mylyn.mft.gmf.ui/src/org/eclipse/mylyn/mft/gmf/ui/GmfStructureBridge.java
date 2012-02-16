@@ -11,6 +11,7 @@
 
 package org.eclipse.mylyn.mft.gmf.ui;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.mylyn.mft.emf.core.EmfStructureBridge;
 
@@ -26,7 +27,8 @@ public abstract class GmfStructureBridge extends EmfStructureBridge {
 	@Override
 	public Object getDomainObject(Object object) {
 		if (object instanceof View) {
-			return ((View) object).getElement();
+			EObject semanticElement = ((View) object).getElement();
+			return semanticElement == null ? null : super.getDomainObject(semanticElement);
 		}
 		return super.getDomainObject(object);
 	}
