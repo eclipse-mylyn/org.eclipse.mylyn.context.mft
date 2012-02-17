@@ -52,13 +52,16 @@ public class RevealMouseListener implements MouseMoveListener, MouseTrackListene
 	private void findChildFigure(IFigure parent, Rectangle revealBounds, HashSet<IRevealableFigure> found) {
 		for (Object object : parent.getChildren()) {
 			IFigure child = (IFigure) object;
-			if (revealBounds.intersects(child.getClientArea())) {
+			Rectangle clientArea = child.getClientArea();
+			Rectangle childRevealBounds = revealBounds.getCopy();
+			child.translateFromParent(childRevealBounds);
+			if (childRevealBounds.intersects(clientArea)) {
 				// only reveal outer-most
 				IRevealableFigure figure = getRevealableMember(child);
 				if (figure != null) {
 					found.add(figure);
 				}
-				findChildFigure(child, revealBounds, found);
+				findChildFigure(child, childRevealBounds, found);
 			}
 		}
 	}
@@ -107,7 +110,9 @@ public class RevealMouseListener implements MouseMoveListener, MouseTrackListene
 	}
 
 	private double nearness(IFigure figure, Point point) {
-		double d = distance(figure.getClientArea(), point);
+		Rectangle clientArea = figure.getClientArea().getCopy();
+		figure.translateToAbsolute(clientArea);
+		double d = distance(clientArea, point);
 		d = Math.min(d, REVEAL_DISTANCE);
 		double n = 1.0 - (d / REVEAL_DISTANCE);
 		return n;
