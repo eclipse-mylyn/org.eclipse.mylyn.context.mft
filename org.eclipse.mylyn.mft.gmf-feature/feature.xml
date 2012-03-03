@@ -14,9 +14,9 @@
       label="%featureName"
       version="0.9.0.qualifier"
       provider-name="%providerName"
-      plugin="org.eclipse.mylyn">
+      plugin="org.eclipse.mylyn.mft.gmf.ui">
 
-   <description url="http://eclipse.org/mylyn">
+   <description url="http://eclipse.org/mft">
       %description
    </description>
 
