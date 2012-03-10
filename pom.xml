@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.eclipse.mylyn</groupId>
@@ -40,39 +40,58 @@
     </repository>
   </repositories>
   <profiles>
-	<profile>
-	  <id>implicit-target</id>
+    <profile>
+      <id>implicit-target</id>
       <activation>
-		<property>
-		  <name>!explicit-target</name>
-		</property>
+        <property>
+          <name>!explicit-target</name>
+        </property>
       </activation>
-	  <repositories>
-		<repository>
-		  <id>eclipse-mylyn</id>
-		  <layout>p2</layout>
-		  <url>${mylyn-repository-url}</url>
-		</repository>
-	  </repositories>
-	</profile>
+      <repositories>
+        <repository>
+          <id>eclipse-mylyn</id>
+          <layout>p2</layout>
+          <url>${mylyn-repository-url}</url>
+        </repository>
+      </repositories>
+    </profile>
+    <profile>
+      <!-- work around broken staging site -->
+      <id>e4.2</id>
+      <activation>
+        <property>
+          <name>target-profile</name>
+          <value>e4.2</value>
+        </property>
+      </activation>
+      <repositories>
+        <repository>
+          <id>juno</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/eclipse/updates/4.2milestones/S-4.2M5-201201271145</url>
+        </repository>
+      </repositories>
+    </profile>
   </profiles>
   <modules>
-	<module>org.eclipse.mylyn.mft.ecoretools-feature</module>
-	<module>org.eclipse.mylyn.mft.ecoretools.ui</module>
-	<module>org.eclipse.mylyn.mft.ecoretools.tests</module>
-	<module>org.eclipse.mylyn.mft.emf-feature</module>
-	<module>org.eclipse.mylyn.mft.emf.core</module>
-	<module>org.eclipse.mylyn.mft.emf.tests</module>
-	<module>org.eclipse.mylyn.mft.emf.ui</module>
-	<module>org.eclipse.mylyn.mft.gmf-feature</module>
-	<module>org.eclipse.mylyn.mft.gmf.ui</module>
-	<module>org.eclipse.mylyn.mft.papyrus-feature</module>
-	<module>org.eclipse.mylyn.mft.papyrus.ui</module>
-	<module>org.eclipse.mylyn.mft.papyrus.tests</module>
-	<module>org.eclipse.mylyn.mft.sdk-feature</module>
-	<module>org.eclipse.mylyn.mft.sdk.util</module>
-	<module>org.eclipse.mylyn.mft.uml2-feature</module>
-	<module>org.eclipse.mylyn.mft.uml2.core</module>
-   <module>org.eclipse.mylyn.mft-site</module>
+    <module>org.eclipse.mylyn.mft.ecoretools-feature</module>
+    <module>org.eclipse.mylyn.mft.ecoretools.ui</module>
+    <module>org.eclipse.mylyn.mft.ecoretools.tests</module>
+    <module>org.eclipse.mylyn.mft.emf-feature</module>
+    <module>org.eclipse.mylyn.mft.emf.core</module>
+    <module>org.eclipse.mylyn.mft.emf.tests</module>
+    <module>org.eclipse.mylyn.mft.emf.ui</module>
+    <module>org.eclipse.mylyn.mft.gmf-feature</module>
+    <module>org.eclipse.mylyn.mft.gmf.ui</module>
+    <!--
+    <module>org.eclipse.mylyn.mft.papyrus-feature</module>
+    <module>org.eclipse.mylyn.mft.papyrus.ui</module>
+    <module>org.eclipse.mylyn.mft.papyrus.tests</module>
+    -->
+    <module>org.eclipse.mylyn.mft.sdk-feature</module>
+    <module>org.eclipse.mylyn.mft.sdk.util</module>
+    <module>org.eclipse.mylyn.mft.uml2-feature</module>
+    <module>org.eclipse.mylyn.mft.uml2.core</module>
+    <module>org.eclipse.mylyn.mft-site</module>
   </modules>
 </project>

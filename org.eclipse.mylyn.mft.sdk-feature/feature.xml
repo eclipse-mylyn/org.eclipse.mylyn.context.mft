@@ -40,9 +40,11 @@
          id="org.eclipse.mylyn.mft.gmf"
          version="0.0.0"/>
 
+   <!--
    <includes
          id="org.eclipse.mylyn.mft.papyrus"
          version="0.0.0"/>
+   -->
 
    <includes
          id="org.eclipse.mylyn.mft.uml2"
@@ -83,12 +85,14 @@
          version="0.0.0"
          unpack="false"/>
 
+   <!--
    <plugin
          id="org.eclipse.mylyn.mft.papyrus.ui.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+   -->
 
    <plugin
          id="org.eclipse.mylyn.mft.uml2.core.source"
