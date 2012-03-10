@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.6"?>
+
+<target name="mft-e3.7" sequenceNumber="16">
+<locations>
+<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.sdk.ide" version="0.0.0"/>
+<unit id="org.eclipse.emf.common.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.emf.common.ui.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.emf.ecore.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.emf.ecoretools.sdk.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.emf.edit.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.emf.edit.ui.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.emf.databinding.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.emf.transaction.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.gef.sdk.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.papyrus.sdk.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.uml2.sdk.feature.group" version="0.0.0"/>
+<repository location="http://download.eclipse.org/releases/indigo/201109230900/"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.mylyn.commons.sdk.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.mylyn.context.sdk.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.mylyn.sdk_feature.feature.group" version="0.0.0"/>
+<repository location="http://download.eclipse.org/mylyn/snapshots/weekly"/>
+</location>
+</locations>
+</target>
