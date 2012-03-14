@@ -316,6 +316,9 @@ public abstract class ContextDecoratorProvider extends AbstractProvider implemen
 	}
 
 	void refresh(IInteractionElement element) {
+		if (element == null || element.getContentType() == null) {
+			return;
+		}
 		if (element.getContentType().equals(getDomainUIBridge().getContentType())) {
 			String handleIdentifier = element.getHandleIdentifier();
 			Collection<ContextDecorator> values = decoratorsForModel.get(handleIdentifier);
