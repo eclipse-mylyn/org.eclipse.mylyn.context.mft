@@ -36,6 +36,8 @@ public class BasicEmfResourceTest extends AbstractEmfContextTest {
 
 	@Override
 	protected void setUp() throws Exception {
+		ContextCore.getContextManager().setContextCapturePaused(true);
+
 		// ignore
 		super.setUp();
 //		resourceModelBridge = new EcoreDomainBridge();
@@ -49,7 +51,6 @@ public class BasicEmfResourceTest extends AbstractEmfContextTest {
 	}
 
 	public void testResourceSelect() throws CoreException {
-		ContextCore.getContextManager().setContextCapturePaused(true);
 		IFile file = getEmfProject().getProject().getFile("model/library.ecore"); //$NON-NLS-1$
 		assertTrue(file.exists());
 
