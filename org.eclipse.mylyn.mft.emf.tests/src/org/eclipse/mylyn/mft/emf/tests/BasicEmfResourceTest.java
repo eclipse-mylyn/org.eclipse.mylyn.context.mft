@@ -36,9 +36,6 @@ public class BasicEmfResourceTest extends AbstractEmfContextTest {
 
 	@Override
 	protected void setUp() throws Exception {
-		ContextCore.getContextManager().setContextCapturePaused(true);
-
-		// ignore
 		super.setUp();
 //		resourceModelBridge = new EcoreDomainBridge();
 		ResourcesUiBridgePlugin.getInterestUpdater().setSyncExec(true);
@@ -54,12 +51,14 @@ public class BasicEmfResourceTest extends AbstractEmfContextTest {
 		IFile file = getEmfProject().getProject().getFile("model/library.ecore"); //$NON-NLS-1$
 		assertTrue(file.exists());
 
+		// opening editors can cause selection events
+		context.reset();
+
 		String handleIdentifier = resourceBridge.getHandleIdentifier(file);
 		IInteractionElement element = ContextCore.getContextManager().getElement(handleIdentifier);
 		assertNotNull(element);
 		assertNotNull(element.getInterest());
 		assertFalse(element.getInterest().isInteresting());
-		ContextCore.getContextManager().setContextCapturePaused(false);
 
 		PackageExplorerPart pe = PackageExplorerPart.openInActivePerspective();
 		printContext(ContextCore.getContextManager().getActiveContext());
