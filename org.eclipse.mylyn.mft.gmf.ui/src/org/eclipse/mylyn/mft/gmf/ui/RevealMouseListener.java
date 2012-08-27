@@ -43,6 +43,7 @@ public class RevealMouseListener implements MouseMoveListener, MouseTrackListene
 
 	private Collection<IRevealableFigure> getTargetFigures(Point mousePoint) {
 		Rectangle revealBounds = new Rectangle(mousePoint, new Dimension(REVEAL_DISTANCE * 2, REVEAL_DISTANCE * 2));
+		layer.translateFromParent(revealBounds);//translate into viewport's client area coordinates
 		revealBounds.translate(-REVEAL_DISTANCE, -REVEAL_DISTANCE);
 		HashSet<IRevealableFigure> found = new HashSet<IRevealableFigure>();
 		findChildFigure(layer, revealBounds, found);
@@ -120,7 +121,6 @@ public class RevealMouseListener implements MouseMoveListener, MouseTrackListene
 
 	public void mouseMove(MouseEvent e) {
 		Point mousePoint = new Point(e.x, e.y);
-		layer.translateFromParent(mousePoint);
 		Collection<IRevealableFigure> newDecorations = getTargetFigures(mousePoint);
 
 		if (!newDecorations.equals(lastDecorations)) {
