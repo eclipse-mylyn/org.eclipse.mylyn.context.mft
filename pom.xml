@@ -66,11 +66,9 @@
     <module>org.eclipse.mylyn.mft.emf.ui</module>
     <module>org.eclipse.mylyn.mft.gmf-feature</module>
     <module>org.eclipse.mylyn.mft.gmf.ui</module>
-    <!--
     <module>org.eclipse.mylyn.mft.papyrus-feature</module>
     <module>org.eclipse.mylyn.mft.papyrus.ui</module>
     <module>org.eclipse.mylyn.mft.papyrus.tests</module>
-    -->
     <module>org.eclipse.mylyn.mft.sdk-feature</module>
     <module>org.eclipse.mylyn.mft.sdk.util</module>
     <module>org.eclipse.mylyn.mft.uml2-feature</module>
