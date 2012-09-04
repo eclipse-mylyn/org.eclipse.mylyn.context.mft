@@ -12,7 +12,7 @@
 <feature
       id="org.eclipse.mylyn.mft.papyrus"
       label="%featureName"
-      version="0.9.0.qualifier"
+      version="0.9.1.qualifier"
       provider-name="%providerName"
       plugin="org.eclipse.mylyn.mft.papyrus.ui">
 
@@ -33,9 +33,9 @@
       <import feature="org.eclipse.uml2" version="3.2.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.mylyn.commons" version="3.7.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.mylyn.context_feature" version="3.7.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.mylyn.mft.emf" version="0.9.0" match="compatible"/>
-      <import feature="org.eclipse.mylyn.mft.gmf" version="0.9.0" match="compatible"/>
-      <import feature="org.eclipse.mylyn.mft.uml2" version="0.9.0" match="compatible"/>
+      <import feature="org.eclipse.mylyn.mft.emf" version="0.9.1" match="compatible"/>
+      <import feature="org.eclipse.mylyn.mft.gmf" version="0.9.1" match="compatible"/>
+      <import feature="org.eclipse.mylyn.mft.uml2" version="0.9.1" match="compatible"/>
    </requires>
 
    <plugin

@@ -12,7 +12,7 @@
 <feature
       id="org.eclipse.mylyn.mft.ecoretools"
       label="%featureName"
-      version="0.9.0.qualifier"
+      version="0.9.1.qualifier"
       provider-name="%providerName"
       plugin="org.eclipse.mylyn.mft.ecoretools.ui">
 
@@ -32,8 +32,8 @@
       <import feature="org.eclipse.emf.ecoretools" version="0.10.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.mylyn.commons" version="3.7.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.mylyn.context_feature" version="3.7.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.mylyn.mft.emf" version="0.9.0" match="compatible"/>
-      <import feature="org.eclipse.mylyn.mft.gmf" version="0.9.0" match="compatible"/>
+      <import feature="org.eclipse.mylyn.mft.emf" version="0.9.1" match="compatible"/>
+      <import feature="org.eclipse.mylyn.mft.gmf" version="0.9.1" match="compatible"/>
    </requires>
 
    <plugin

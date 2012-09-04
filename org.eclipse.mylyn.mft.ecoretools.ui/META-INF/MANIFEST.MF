@@ -4,7 +4,7 @@ Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.eclipse.mylyn.mft.ecoretools.ui;singleton:=true
-Bundle-Version: 0.9.0.qualifier
+Bundle-Version: 0.9.1.qualifier
 Bundle-Activator: org.eclipse.mylyn.internal.mft.ecoretools.ui.EcoreUiBridgePlugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
@@ -28,9 +28,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.mylyn.context.ui,
  org.eclipse.mylyn.commons.core,
  org.eclipse.mylyn.monitor.ui,
- org.eclipse.mylyn.mft.emf.core;bundle-version="0.9.0",
- org.eclipse.mylyn.mft.gmf.ui;bundle-version="0.9.0",
- org.eclipse.mylyn.mft.emf.ui;bundle-version="0.9.0"
+ org.eclipse.mylyn.mft.emf.core;bundle-version="0.9.1",
+ org.eclipse.mylyn.mft.gmf.ui;bundle-version="0.9.1",
+ org.eclipse.mylyn.mft.emf.ui;bundle-version="0.9.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.mylyn.internal.mft.ecoretools.ui;x-internal:=true
