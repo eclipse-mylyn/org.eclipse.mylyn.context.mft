@@ -44,10 +44,6 @@
          id="org.eclipse.mylyn.mft.uml2"
          version="0.0.0"/>
 
-   <includes
-         id="org.eclipse.mylyn.mft.papyrus"
-         version="0.0.0"/>
-
    <plugin
          id="org.eclipse.mylyn.mft.sdk.util"
          download-size="0"

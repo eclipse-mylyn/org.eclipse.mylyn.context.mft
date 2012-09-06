@@ -10,4 +10,7 @@
   <artifactId>org.eclipse.mylyn.mft.papyrus</artifactId>
   <version>0.9.1-SNAPSHOT</version>
   <packaging>eclipse-feature</packaging>
+  <properties>
+    <platform-repository-url>http://download.eclipse.org/releases/indigo/201202240900/</platform-repository-url>
+  </properties>
 </project>

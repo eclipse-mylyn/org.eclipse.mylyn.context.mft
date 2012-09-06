@@ -10,6 +10,9 @@
   <artifactId>org.eclipse.mylyn.mft.papyrus.tests</artifactId>
   <version>0.9.1-SNAPSHOT</version>
   <packaging>eclipse-test-plugin</packaging>
+  <properties>
+    <platform-repository-url>http://download.eclipse.org/releases/indigo/201202240900/</platform-repository-url>
+  </properties>
   <build>
     <plugins>
       <plugin>
