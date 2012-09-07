@@ -16,7 +16,9 @@ import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeEditPart;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
+import org.eclipse.gmf.runtime.notation.impl.ShapeImpl;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.mylyn.commons.sdk.util.CommonTestUtil;
@@ -29,7 +31,6 @@ import org.eclipse.mylyn.internal.mft.papyrus.ui.Uml2UiBridge;
 import org.eclipse.mylyn.mft.emf.core.DomainModelContextStructureBridge;
 import org.eclipse.mylyn.mft.emf.ui.DiagramUiEditingMonitor;
 import org.eclipse.mylyn.mft.sdk.util.AbstractEmfContextTest;
-import org.eclipse.papyrus.diagram.common.editparts.IPapyrusEditPart;
 import org.eclipse.papyrus.editor.PapyrusMultiDiagramEditor;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
@@ -73,7 +74,7 @@ public class PapyrusDiagramEditorTest extends AbstractEmfContextTest {
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
 		PapyrusMultiDiagramEditor ed = (PapyrusMultiDiagramEditor) page.openEditor(input,
-				"org.eclipse.papyrus.core.papyrusEditor");
+				"org.eclipse.papyrus.infra.core.papyrusEditor");
 
 		System.out.println(ContextCore.getContextManager().getActiveContext().getAllElements());
 
@@ -84,7 +85,7 @@ public class PapyrusDiagramEditorTest extends AbstractEmfContextTest {
 		IInteractionElement iInteractionElement = ContextCore.getContextManager().getActiveContext().get(RESOURCE_URI);
 		assertFalse(iInteractionElement.getInterest().isInteresting());
 
-		ClassImpl book = (ClassImpl) ed.getEditingDomain()
+		ShapeImpl bookShape = (ShapeImpl) ed.getEditingDomain()
 				.getResourceSet()
 				.getResources()
 				.get(0)
@@ -93,10 +94,12 @@ public class PapyrusDiagramEditorTest extends AbstractEmfContextTest {
 				.eContents()
 				.get(0);
 
-		assertEquals("Book", book.getName()); //$NON-NLS-1$
+		ClassImpl book = (ClassImpl) bookShape.getElement();
+		String name = book.getName();
+		assertEquals("Book", name); //$NON-NLS-1$
 
 		List<?> findEditPartsForElement = ed.getDiagramGraphicalViewer().findEditPartsForElement(
-				EMFCoreUtil.getProxyID(book), IPapyrusEditPart.class);
+				EMFCoreUtil.getProxyID(book), ShapeEditPart.class);
 
 		assertEquals(findEditPartsForElement.size(), 1);
 		StructuredSelection selection = new StructuredSelection(findEditPartsForElement);

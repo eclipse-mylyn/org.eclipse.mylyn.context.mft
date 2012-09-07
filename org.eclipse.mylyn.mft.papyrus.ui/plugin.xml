@@ -62,7 +62,7 @@
 			viewerId="org.eclipse.mylyn.context.ui.navigator.context">
          <includes>
             <contentExtension pattern="org.eclipse.papyrus.diagram.clazz.resourceContent"/>
-			<contentExtension pattern="org.eclipse.papyrus.diagram.clazz.domainResourceContent"/>
+			<contentExtension pattern="org.eclipse.papyrus.*"/>
          </includes>
 		</viewerContentBinding>
 	</extension>

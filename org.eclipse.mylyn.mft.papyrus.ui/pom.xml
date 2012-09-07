@@ -11,7 +11,7 @@
   <version>0.9.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
   <properties>
-    <platform-repository-url>http://download.eclipse.org/releases/indigo/201202240900/</platform-repository-url>
+    <platform-repository-url>${papyrus-repository-url}</platform-repository-url>
   </properties>
   <build>
     <plugins>

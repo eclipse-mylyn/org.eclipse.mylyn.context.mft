@@ -13,9 +13,9 @@ package org.eclipse.mylyn.internal.mft.papyrus.ui;
 
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.mylyn.mft.emf.ui.DiagramUiBridge;
-import org.eclipse.papyrus.diagram.clazz.edit.parts.ClassEditPart;
-import org.eclipse.papyrus.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.papyrus.editor.PapyrusMultiDiagramEditor;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassEditPart;
+import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Relationship;

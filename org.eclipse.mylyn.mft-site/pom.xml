@@ -15,6 +15,7 @@
   <properties>
     <qualifier>${project.unqualifiedVersion}</qualifier>
     <sign-dir>tools/mylyn/hudson/mft/signing</sign-dir>
+    <platform-repository-url>${papyrus-repository-url}</platform-repository-url>
   </properties>
   <profiles>
     <profile>
