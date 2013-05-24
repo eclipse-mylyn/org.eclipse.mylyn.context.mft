@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.eclipse.mylyn</groupId>
     <artifactId>org.eclipse.mylyn-parent</artifactId>
-    <version>3.8.0-SNAPSHOT</version>
+    <version>3.9.0-SNAPSHOT</version>
     <relativePath>../org.eclipse.mylyn/org.eclipse.mylyn-parent</relativePath>    
   </parent>
   <groupId>org.eclipse.mylyn.mft</groupId>
@@ -27,7 +27,10 @@
   </issueManagement>
   <properties>
     <tycho.scmUrl>scm:git:git://git.eclipse.org/gitroot/mylyn/org.eclipse.mylyn.context.mft.git</tycho.scmUrl>
+    <!--
     <mylyn-repository-url>http://download.eclipse.org/mylyn/drops/3.8.0/v20120612-0600/</mylyn-repository-url>
+    -->
+    <mylyn-repository-url>http://download.eclipse.org/mylyn/snapshots/3.9/</mylyn-repository-url>
     <papyrus-repository-url>http://download.eclipse.org/releases/juno/</papyrus-repository-url>
   </properties>
   <repositories>
