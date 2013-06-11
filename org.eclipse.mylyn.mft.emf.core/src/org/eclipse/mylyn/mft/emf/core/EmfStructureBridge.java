@@ -118,6 +118,9 @@ public abstract class EmfStructureBridge extends DomainModelContextStructureBrid
 	 */
 	@Override
 	public Object getDomainObjectForHandle(String handle) {
+		if (handle.equals("/")) {
+			return null;
+		}
 		URI uri = URI.createURI(handle);
 		ResourceSet resourceSet = getDomainObjectResourceSet();
 		try {
