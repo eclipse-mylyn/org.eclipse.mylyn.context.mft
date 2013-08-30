@@ -16,9 +16,11 @@ import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeEditPart;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
-import org.eclipse.gmf.runtime.notation.impl.ShapeImpl;
+import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.mylyn.commons.sdk.util.CommonTestUtil;
@@ -85,18 +87,20 @@ public class PapyrusDiagramEditorTest extends AbstractEmfContextTest {
 		IInteractionElement iInteractionElement = ContextCore.getContextManager().getActiveContext().get(RESOURCE_URI);
 		assertFalse(iInteractionElement.getInterest().isInteresting());
 
-		ShapeImpl bookShape = (ShapeImpl) ed.getEditingDomain()
-				.getResourceSet()
-				.getResources()
-				.get(0)
-				.getContents()
-				.get(0)
-				.eContents()
-				.get(0);
-
-		ClassImpl book = (ClassImpl) bookShape.getElement();
-		String name = book.getName();
-		assertEquals("Book", name); //$NON-NLS-1$
+		TreeIterator<EObject> children = ed.getEditingDomain().getResourceSet().getResources().get(0).getAllContents();
+		ClassImpl book = null;
+		while (children.hasNext()) {
+			EObject child = children.next();
+			if (child instanceof Shape) {
+				ClassImpl candidate = (ClassImpl) ((Shape) child).getElement();
+				if (candidate.getName().equals("Book")) {
+					book = candidate;
+				}
+			}
+		}
+		if (book == null) {
+			fail("No shape in content tree");
+		}
 
 		List<?> findEditPartsForElement = ed.getDiagramGraphicalViewer().findEditPartsForElement(
 				EMFCoreUtil.getProxyID(book), ShapeEditPart.class);
