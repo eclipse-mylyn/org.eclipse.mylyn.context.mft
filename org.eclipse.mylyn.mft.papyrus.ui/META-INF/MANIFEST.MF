@@ -22,7 +22,9 @@ Require-Bundle: org.eclipse.mylyn.context.core,
  org.eclipse.gmf.runtime.notation,
  org.eclipse.gef,
  org.eclipse.gmf.runtime.diagram.core;bundle-version="1.6.0",
- org.eclipse.gmf.runtime.diagram.ui
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.papyrus.infra.core;bundle-version="0.10.0",
+ org.eclipse.uml2.uml
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.eclipse.mylyn.internal.mft.papyrus.ui;x-internal:=true

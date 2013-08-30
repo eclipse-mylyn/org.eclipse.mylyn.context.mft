@@ -31,7 +31,7 @@
     <mylyn-repository-url>http://download.eclipse.org/mylyn/drops/3.8.0/v20120612-0600/</mylyn-repository-url>
     -->
     <mylyn-repository-url>http://download.eclipse.org/mylyn/snapshots/3.9/</mylyn-repository-url>
-    <papyrus-repository-url>http://download.eclipse.org/releases/juno/</papyrus-repository-url>
+    <papyrus-repository-url>http://download.eclipse.org/releases/kepler/</papyrus-repository-url>
   </properties>
   <repositories>
     <repository>
