@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Mylyn Context Papyrus Connector
 Bundle-SymbolicName: org.eclipse.mylyn.mft.papyrus.tests;singleton:=true
-Bundle-Version: 0.9.2.qualifier
+Bundle-Version: 0.9.3.qualifier
 Bundle-Vendor: Eclipse Model Focusing Tools
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
@@ -35,7 +35,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.mylyn.mft.papyrus.ui,
  org.eclipse.mylyn.mft.gmf.ui,
  org.eclipse.mylyn.commons.sdk.util,
- org.eclipse.mylyn.mft.emf.core;bundle-version="0.9.2",
+ org.eclipse.mylyn.mft.emf.core;bundle-version="0.9.3",
  org.eclipse.mylyn.mft.uml2.core,
  org.eclipse.papyrus.uml.diagram.common;bundle-version="0.10.0",
  org.eclipse.papyrus.infra.core;bundle-version="0.10.0",

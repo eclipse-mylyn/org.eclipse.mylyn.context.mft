@@ -5,9 +5,9 @@
   <parent>
     <artifactId>org.eclipse.mylyn.mft-parent</artifactId>
     <groupId>org.eclipse.mylyn.mft</groupId>
-    <version>0.9.2-SNAPSHOT</version>
+    <version>0.9.3-SNAPSHOT</version>
   </parent>
   <artifactId>org.eclipse.mylyn.mft.emf</artifactId>
-  <version>0.9.2-SNAPSHOT</version>
+  <version>0.9.3-SNAPSHOT</version>
   <packaging>eclipse-feature</packaging>
 </project>
